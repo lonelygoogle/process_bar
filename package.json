@@ -10,6 +10,7 @@
     "@types/node": "^16.18.35",
     "@types/react": "^18.2.9",
     "@types/react-dom": "^18.2.4",
+    "node-sass": "^7.0.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
@@ -23,10 +24,35 @@
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
+    "root": true,
     "extends": [
       "react-app",
-      "react-app/jest"
-    ]
+      "react-app/jest",
+      "eslint:recommended",
+      "plugin:@typescript-eslint/recommended",
+      "prettier"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+      "project": [
+        "./tsconfig.json"
+      ]
+    },
+    "plugins": [
+      "testing-library",
+      "@typescript-eslint"
+    ],
+    "rules": {
+      "no-container": 0,
+      "no-node-access": 0,
+      "no-const-assign": 2,
+      "no-var": 2,
+      "react-hooks/exhaustive-deps": 0,
+      "@typescript-eslint/no-non-null-asserted-optional-chain": 0,
+      "@typescript-eslint/no-non-null-assertion": 0,
+      "@typescript-eslint/no-explicit-any": 0,
+      "prefer-const": 0
+    }
   },
   "browserslist": {
     "production": [
@@ -39,5 +65,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
   }
 }
