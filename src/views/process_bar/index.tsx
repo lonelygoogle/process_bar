@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import "./index.scss";
 import { buttonsValue, optionsValue } from "./schema";
 
@@ -24,14 +24,21 @@ const ProcessBar: React.FC = () => {
   };
 
   return (
-    <div className="App">
+    <div className="App" data-testid="process-bar">
       <div className="App-container">
+        <h1>Process Bar Demo</h1>
         {progressBars.map((value, index) => (
           <div key={index} className="progress-container">
-            <p className="progress-value">{`${value}%`}</p>
+            <p
+              className="progress-value"
+              data-testid={`progress-value-${index}`}
+            >
+              {`${value}%`}
+            </p>
             <div
               className={value > 100 ? "progress-bar red" : "progress-bar"}
               style={{ width: `${Math.min(100, value)}%` }}
+              data-testid={`progress-bar-${index}`}
             ></div>
           </div>
         ))}
@@ -41,6 +48,7 @@ const ProcessBar: React.FC = () => {
             className="selectLine"
             value={selectedLine}
             onChange={handleLineSelection}
+            data-testid="select-line"
           >
             {optionsValue.map((option) => (
               <option key={option.key} value={option.key}>
