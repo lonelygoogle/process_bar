@@ -14,7 +14,7 @@ pipelines:
             - git remote set-url origin $BITBUCKET_GIT_SSH_ORIGIN
             - npm version prerelease -m "Bump version to %s [skip ci]" --force
             - export VERSION=`grep version package.json | awk '{print $2}' | sed 's/.$//' | sed 's/"//g'`
-            - export IMAGE_NAME=capaydocker/capay-data:$VERSION
+            - export IMAGE_NAME=aaadocker/aaa-data:$VERSION
             - echo $VERSION > version.txt
             # authenticate with the Docker Hub registry
             - docker login --username $DOCKER_HUB_USER --password $DOCKER_HUB_PASSWORD
@@ -23,8 +23,8 @@ pipelines:
             - docker build -t $IMAGE_NAME --build-arg NPM_TOKEN=$NPM_TOKEN .
             # push the new Docker image to the Docker registry
             - docker push $IMAGE_NAME
-            - docker tag $IMAGE_NAME capaydocker/capay-data:latest
-            - docker push capaydocker/capay-data:latest
+            - docker tag $IMAGE_NAME aaadocker/aaa-data:latest
+            - docker push aaadocker/aaa-data:latest
             - git push && git push --tags
           artifacts: # defining the artifacts to be passed to each future step.
             - version.txt
@@ -39,7 +39,7 @@ pipelines:
             - rm -rf .git
             - apk --update add zip
             - export VERSION=`cat version.txt`
-            - export IMAGE_NAME="capaydocker\/capay-data:$VERSION"
+            - export IMAGE_NAME="aaadocker\/aaa-data:$VERSION"
             - sed -i "s/IMAGENAME/${IMAGE_NAME}/g" ./ecs_config.yaml
             - find . -type d -exec chmod 755 {} \;
             - find . -type f -exec chmod 644 {} \;
@@ -58,7 +58,7 @@ pipelines:
             - git remote set-url origin $BITBUCKET_GIT_SSH_ORIGIN
             - npm version patch -m "Bump version to %s [skip ci]" --force
             - export VERSION=`grep version package.json | awk '{print $2}' | sed 's/.$//' | sed 's/"//g'`
-            - export IMAGE_NAME=capaydocker/capay-data:$VERSION
+            - export IMAGE_NAME=aaadocker/aaa-data:$VERSION
             - echo $VERSION > version.txt
             # authenticate with the Docker Hub registry
             - docker login --username $DOCKER_HUB_USER --password $DOCKER_HUB_PASSWORD
@@ -67,8 +67,8 @@ pipelines:
             - docker build -t $IMAGE_NAME --build-arg NPM_TOKEN=$NPM_TOKEN .
             # push the new Docker image to the Docker registry
             - docker push $IMAGE_NAME
-            - docker tag $IMAGE_NAME capaydocker/capay-data:latest
-            - docker push capaydocker/capay-data:latest
+            - docker tag $IMAGE_NAME aaadocker/aaa-data:latest
+            - docker push aaadocker/aaa-data:latest
             - git push && git push --tags
           artifacts: # defining the artifacts to be passed to each future step.
             - version.txt
@@ -83,7 +83,7 @@ pipelines:
             - rm -rf .git
             - apk --update add zip
             - export VERSION=`cat version.txt`
-            - export IMAGE_NAME="capaydocker\/capay-data:$VERSION"
+            - export IMAGE_NAME="aaadocker\/aaa-data:$VERSION"
             - sed -i "s/IMAGENAME/${IMAGE_NAME}/g" ./ecs_config.yaml
             - find . -type d -exec chmod 755 {} \;
             - find . -type f -exec chmod 644 {} \;

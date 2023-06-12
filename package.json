@@ -21,23 +21,19 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "eslint \"{src,apps,libs,test}/**/*.{ts,tsx}\" --fix",
+    "lint:test": "eslint \"{src,apps,libs,test}/**/*.{ts,tsx}\""
   },
   "eslintConfig": {
-    "root": true,
     "extends": [
       "react-app",
       "react-app/jest",
       "eslint:recommended",
-      "plugin:@typescript-eslint/recommended",
-      "prettier"
+      "plugin:@typescript-eslint/recommended"
     ],
     "parser": "@typescript-eslint/parser",
-    "parserOptions": {
-      "project": [
-        "./tsconfig.json"
-      ]
-    },
+    "parserOptions": {},
     "plugins": [
       "testing-library",
       "@typescript-eslint"
@@ -67,6 +63,8 @@
     ]
   },
   "devDependencies": {
-    "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "eslint": "^8.42.0",
+    "eslint-config-prettier": "^8.8.0"
   }
 }
