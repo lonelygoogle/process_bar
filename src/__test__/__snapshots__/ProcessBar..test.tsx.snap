@@ -2,103 +2,94 @@
 
 exports[`ProcessBar should match the snapshot 1`] = `
 <div>
-  <div
-    class="App"
-    data-testid="process-bar"
+  <h1
+    class="process_header"
   >
-    <div
-      class="App-container"
+    Process Bar Demo
+  </h1>
+  <div
+    class="progress-container"
+  >
+    <p
+      class="progress-value"
+      data-testid="progress-value-0"
     >
-      <h1
-        class="process_header"
+      0%
+    </p>
+    <div
+      class="progress-bar"
+      data-testid="progress-bar-0"
+      style="width: 0%;"
+    />
+  </div>
+  <div
+    class="progress-container"
+  >
+    <p
+      class="progress-value"
+      data-testid="progress-value-1"
+    >
+      0%
+    </p>
+    <div
+      class="progress-bar"
+      data-testid="progress-bar-1"
+      style="width: 0%;"
+    />
+  </div>
+  <div
+    class="progress-container"
+  >
+    <p
+      class="progress-value"
+      data-testid="progress-value-2"
+    >
+      0%
+    </p>
+    <div
+      class="progress-bar"
+      data-testid="progress-bar-2"
+      style="width: 0%;"
+    />
+  </div>
+  <div
+    class="control"
+  >
+    <select
+      class="selectLine"
+      data-testid="select-line"
+    >
+      <option
+        value="0"
       >
-        Process Bar Demo
-      </h1>
-      <div
-        class="progress-container"
+        #process1
+      </option>
+      <option
+        value="1"
       >
-        <p
-          class="progress-value"
-          data-testid="progress-value-0"
-        >
-          0%
-        </p>
-        <div
-          class="progress-bar"
-          data-testid="progress-bar-0"
-          style="width: 0%;"
-        />
-      </div>
-      <div
-        class="progress-container"
+        #process2
+      </option>
+      <option
+        value="2"
       >
-        <p
-          class="progress-value"
-          data-testid="progress-value-1"
-        >
-          0%
-        </p>
-        <div
-          class="progress-bar"
-          data-testid="progress-bar-1"
-          style="width: 0%;"
-        />
-      </div>
-      <div
-        class="progress-container"
-      >
-        <p
-          class="progress-value"
-          data-testid="progress-value-2"
-        >
-          0%
-        </p>
-        <div
-          class="progress-bar"
-          data-testid="progress-bar-2"
-          style="width: 0%;"
-        />
-      </div>
-      <div
-        class="control"
-      >
-        <select
-          class="selectLine"
-          data-testid="select-line"
-        >
-          <option
-            value="0"
-          >
-            #process1
-          </option>
-          <option
-            value="1"
-          >
-            #process2
-          </option>
-          <option
-            value="2"
-          >
-            #process3
-          </option>
-        </select>
-        <div
-          class="buttons"
-        >
-          <button>
-            -25
-          </button>
-          <button>
-            -10
-          </button>
-          <button>
-            +10
-          </button>
-          <button>
-            +25
-          </button>
-        </div>
-      </div>
+        #process3
+      </option>
+    </select>
+    <div
+      class="buttons"
+    >
+      <button>
+        -25
+      </button>
+      <button>
+        -10
+      </button>
+      <button>
+        +10
+      </button>
+      <button>
+        +25
+      </button>
     </div>
   </div>
 </div>
