@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './index.scss';
 import { buttonsValue, optionsValue } from './schema';
+import Header from './Header';
 
 const ProcessBar: React.FC = () => {
   const [progressBars, setProgressBars] = useState<number[]>([0, 0, 0]);
@@ -25,7 +26,7 @@ const ProcessBar: React.FC = () => {
 
   return (
     <>
-      <h1 className='process_header'>Process Bar Demo</h1>
+      <Header />
       {progressBars.map((value, index) => (
         <div key={index} className='progress-container'>
           <p className='progress-value' data-testid={`progress-value-${index}`}>
